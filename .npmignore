@@ -1,6 +1,7 @@
 .travis.yml
 test/
 coverage/
+examples/images/
 *.html
 *.sw*
 *.un~
