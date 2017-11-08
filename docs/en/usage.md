@@ -67,3 +67,8 @@ The completion of a waterfall layout becomes very easy.
 ## Examples
 
 - [Sample1](./examples)
+
+## Related Edition
+
+- [React Edition](//github.com/xudafeng/autoresponsive-react)
+- [ReactNative Edition](//github.com/xudafeng/autoresponsive_react_native_sample)
