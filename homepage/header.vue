@@ -121,14 +121,14 @@ header {
         font-size: 40px;
       }
     }
-    .autoresponsive-vue-ribbon {
-      display: none;
-    }
-    .github-btn {
-      position: fixed!important;
-      top: 15px!important;
-      right: 0px!important;
-    }
+  }
+  .autoresponsive-vue-ribbon {
+    display: none;
+  }
+  .github-btn {
+    position: fixed!important;
+    top: 15px!important;
+    right: 0px!important;
   }
 }
 </style>
