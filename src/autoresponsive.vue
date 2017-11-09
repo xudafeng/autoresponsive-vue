@@ -77,18 +77,13 @@ export default {
   computed: {
     containerStyle() {
       return {
-        position: 'relative',
-        height: `${this.refContainerHeight}px`
+        position: 'relative'
       };
     }
   },
   created() {
     this.animationManager = new AnimationManager();
     this.fixedContainerHeight = typeof this.refContainerHeight === 'number';
-    this.sortManager = new GridSort({
-      containerWidth: this.containerWidth,
-      gridWidth: this.gridWidth
-    });
   },
   mounted() {
     this.updateChildren();
@@ -113,7 +108,13 @@ export default {
       Util.merge(s, style);
     },
     updateChildren() {
+      this.sortManager = new GridSort({
+        containerWidth: this.containerWidth,
+        gridWidth: this.gridWidth
+      });
       this.sortManager.init();
+
+      let containerHeight = this.fixedContainerHeight ? this.containerHeight : 0;
       const container = this.$refs.container;
       var children = container.children;
 
@@ -131,9 +132,12 @@ export default {
         const childHeight = parseInt(style.height, 10) + this.itemMargin;
         const calculatedPosition = this.sortManager.getPosition(childWidth, childHeight);
 
-        if (!this.fixedContainerHeight) {
-          if (calculatedPosition[1] + childHeight > this.refContainerHeight) {
-            this.refContainerHeight = calculatedPosition[1] + childHeight;
+        if (this.fixedContainerHeight) {
+          container.style.height = `${containerHeight}px`;
+        } else {
+          if (calculatedPosition[1] + childHeight > containerHeight) {
+            containerHeight = calculatedPosition[1] + childHeight;
+            container.style.height = `${containerHeight}px`;
           }
         }
 
@@ -143,7 +147,7 @@ export default {
             width: childWidth,
             height: childHeight
           },
-          containerHeight: this.refContainerHeight
+          containerHeight: containerHeight
         });
 
         const calculatedStyle = this.animationManager.generate(options);
