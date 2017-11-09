@@ -123,11 +123,11 @@ export default {
   -webkit-transition: opacity .8s ease;
   transition: opacity .8s ease;
   pre {
-    border: none;
     font-size: 18px;
     line-height: 1.5em;
     background: #fcfcfc;
     border: 1px solid #eee;
+    color: #525252;
   }
   hr {
     border-top: 1px dashed #412816;
