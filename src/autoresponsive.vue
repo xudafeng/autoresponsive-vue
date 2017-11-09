@@ -109,7 +109,8 @@ export default {
       });
       this.sortManager.init();
 
-      let containerHeight = this.fixedContainerHeight ? this.containerHeight : 0;
+      let containerHeight = this.verticalDirection === 'bottom' || this.fixedContainerHeight ? this.containerHeight : 0;
+
       const container = this.$refs.container;
       var children = container.children;
 

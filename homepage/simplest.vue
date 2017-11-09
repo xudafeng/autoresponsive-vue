@@ -110,7 +110,13 @@ export default {
           this.options.horizontalDirection = this.options.horizontalDirection === 'left' ? 'right' : 'left';
           break;
         case 'vertical':
-          this.options.verticalDirection = this.options.verticalDirection === 'top' ? 'bottom' : 'top';
+          if (this.options.verticalDirection === 'top') {
+            this.options.containerHeight = parseInt(this.$refs.autoresponsive.$el.style.height, 10);
+            this.options.verticalDirection = 'bottom';
+          } else {
+            this.options.containerHeight = null;
+            this.options.verticalDirection = 'top';
+          }
           break;
       }
     }
