@@ -138,7 +138,7 @@ export default {
     cursor: pointer;
   }
   h2 {
-    margin-top: 30px;
+    margin: 30px 0;
     color: #38495d;
     font-size: 34px;
   }
@@ -148,6 +148,9 @@ export default {
   p {
     font-size: 20px;
     color: #34495e;
+  }
+  li {
+   margin: 10px 0;
   }
 }
 </style>

@@ -71,14 +71,14 @@ export default {
   },
   data() {
     return {
-      containerHeight: 0
+      refContainerHeight: this.containerHeight
     };
   },
   computed: {
     containerStyle() {
       return {
         position: 'relative',
-        height: `${this.containerHeight}px`
+        height: `${this.refContainerHeight}px`
       };
     }
   },
@@ -88,7 +88,7 @@ export default {
       gridWidth: this.gridWidth
     });
     this.animationManager = new AnimationManager();
-    this.fixedContainerHeight = typeof this.containerHeight === 'number';
+    this.fixedContainerHeight = typeof this.refContainerHeight === 'number';
   },
   mounted() {
     this.updateChildren();
@@ -136,8 +136,8 @@ export default {
         const calculatedPosition = this.sortManager.getPosition(childWidth, childHeight);
 
         if (!this.fixedContainerHeight && this.containerWidth) {
-          if (calculatedPosition[1] + childHeight > this.containerHeight) {
-            this.containerHeight = calculatedPosition[1] + childHeight;
+          if (calculatedPosition[1] + childHeight > this.refContainerHeight) {
+            this.refContainerHeight = calculatedPosition[1] + childHeight;
           }
         }
 
@@ -147,7 +147,7 @@ export default {
             width: childWidth,
             height: childHeight
           },
-          containerHeight: this.containerHeight
+          containerHeight: this.refContainerHeight
         });
 
         const calculatedStyle = this.animationManager.generate(options);
@@ -166,5 +166,3 @@ export default {
   }
 };
 </script>
-<style>
-</style>
