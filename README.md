@@ -25,7 +25,7 @@ Live demo & docs: [xudafeng.github.io/autoresponsive-vue](//xudafeng.github.io/a
 ## Installation
 
 ``` bash
-$ npm install autoresponsive-vue --save-dev
+$ npm i autoresponsive-vue --save-dev
 ```
 
 ## Related Edition
