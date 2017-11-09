@@ -67,3 +67,8 @@ Vue.use(AutoResponsive);
 ## Examples
 
 - [示例1](./examples)
+
+## Related Edition
+
+- [React 版本](//github.com/xudafeng/autoresponsive-react)
+- [ReactNative 版本](//github.com/xudafeng/autoresponsive_react_native_sample)

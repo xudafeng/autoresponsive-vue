@@ -28,6 +28,11 @@ Live demo & docs: [xudafeng.github.io/autoresponsive-vue](//xudafeng.github.io/a
 $ npm install autoresponsive-vue --save-dev
 ```
 
+## Related Edition
+
+- [React Edition](//github.com/xudafeng/autoresponsive-react)
+- [ReactNative Edition](//github.com/xudafeng/autoresponsive_react_native_sample)
+
 ## Contributing
 
 See our [CONTRIBUTING.md](./CONTRIBUTING.md) for information on how to contribute.
