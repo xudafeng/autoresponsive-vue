@@ -69,11 +69,6 @@ export default {
       default: () => {}
     }
   },
-  data() {
-    return {
-      refContainerHeight: this.containerHeight
-    };
-  },
   computed: {
     containerStyle() {
       return {
@@ -83,7 +78,7 @@ export default {
   },
   created() {
     this.animationManager = new AnimationManager();
-    this.fixedContainerHeight = typeof this.refContainerHeight === 'number';
+    this.fixedContainerHeight = typeof this.containerHeight === 'number';
   },
   mounted() {
     this.updateChildren();
