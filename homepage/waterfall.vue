@@ -1,5 +1,5 @@
 <template>
-  <div id="waterfall" class="demo-con">
+  <div :id="elementId">
     <auto-responsive
       v-bind="options"
     >
@@ -31,14 +31,25 @@ const getItemStyle = function() {
   };
 };
 
+const elementId = 'waterfall';
+
 export default {
-  name: 'waterfall',
+  name: elementId,
   components: {
     'auto-responsive': AutoResponsive
   },
-  props: ['containerWidth'],
+  props: {
+    containerWidth: {
+      type: Number,
+      default: () => {
+        const simplestElem = document.querySelector(`#${elementId}`);
+        return Utils.width(simplestElem);
+      }
+    }
+  },
   data() {
     return {
+      elementId,
       styleList: [],
       options: {
         itemMargin: 10,
@@ -50,7 +61,7 @@ export default {
       }
     };
   },
-  beforeMount() {
+  created() {
     const list = [];
     let number = 10;
 
@@ -61,7 +72,7 @@ export default {
   },
   mounted() {
     window.addEventListener('resize', () => {
-      const simplestElem = document.querySelector('#waterfall');
+      const simplestElem = document.querySelector(`#${elementId}`);
       this.options.containerWidth = Utils.width(simplestElem);
     }, false);
   },
@@ -72,7 +83,7 @@ export default {
         if (nodes[i] === e.target) {
           const style = this.styleList[i];
           style.width = style.width === '310px' ? '150px' : '310px';
-          Vue.set(this.styleList, 0, style);
+          Vue.set(this.styleList, i, style);
         }
       }
     }
@@ -80,7 +91,7 @@ export default {
 };
 </script>
 <style lang="less">
-.demo-con {
+#waterfall {
   margin: 40px 0 20px 0;
 }
 </style>

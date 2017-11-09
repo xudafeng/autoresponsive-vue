@@ -99,23 +99,14 @@ export default {
       });
     },
     renderDemo() {
-      const simplestElem = document.querySelector('#simplest');
-      const props = {
-        containerWidth: Utils.width(simplestElem)
-      };
-
       this.simplest = this.simplest || new Vue({
         el: '#simplest',
-        render: h => h(SimplestDemo, {
-          props
-        })
+        render: h => h(SimplestDemo)
       });
 
       this.waterfall = this.waterfall || new Vue({
         el: '#waterfall',
-        render: h => h(WaterfallDemo, {
-          props
-        })
+        render: h => h(WaterfallDemo)
       });
     }
   }

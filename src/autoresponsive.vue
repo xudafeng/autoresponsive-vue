@@ -22,7 +22,7 @@ export default {
     },
     containerHeight: {
       type: Number,
-      default: 0
+      default: null
     },
     gridWidth: {
       type: Number,
@@ -83,22 +83,17 @@ export default {
     }
   },
   created() {
+    this.animationManager = new AnimationManager();
+    this.fixedContainerHeight = typeof this.refContainerHeight === 'number';
     this.sortManager = new GridSort({
       containerWidth: this.containerWidth,
       gridWidth: this.gridWidth
     });
-    this.animationManager = new AnimationManager();
-    this.fixedContainerHeight = typeof this.refContainerHeight === 'number';
   },
   mounted() {
     this.updateChildren();
   },
   updated() {
-    this.sortManager.init();
-    this.sortManager = new GridSort({
-      containerWidth: this.containerWidth,
-      gridWidth: this.gridWidth
-    });
     this.updateChildren();
   },
   methods: {
@@ -118,6 +113,7 @@ export default {
       Util.merge(s, style);
     },
     updateChildren() {
+      this.sortManager.init();
       const container = this.$refs.container;
       var children = container.children;
 
@@ -135,7 +131,7 @@ export default {
         const childHeight = parseInt(style.height, 10) + this.itemMargin;
         const calculatedPosition = this.sortManager.getPosition(childWidth, childHeight);
 
-        if (!this.fixedContainerHeight && this.containerWidth) {
+        if (!this.fixedContainerHeight) {
           if (calculatedPosition[1] + childHeight > this.refContainerHeight) {
             this.refContainerHeight = calculatedPosition[1] + childHeight;
           }

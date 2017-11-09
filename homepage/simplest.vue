@@ -1,5 +1,5 @@
 <template>
-  <div id="simplest" class="demo-con">
+  <div :id="elementId">
     <div class="btn-group">
       <button v-for="item in buttons" @click="clickHandler(item)" type="button" class="btn btn-default">{{ item }}</button>
     </div>
@@ -40,18 +40,29 @@ const buttons = [
   'vertical'
 ];
 
+const elementId = 'simplest';
+
 export default {
-  name: 'simplest',
+  name: elementId,
   components: {
     'auto-responsive': AutoResponsive
   },
-  props: ['containerWidth'],
+  props: {
+    containerWidth: {
+      type: Number,
+      default: () => {
+        const simplestElem = document.querySelector(`#${elementId}`);
+        return Utils.width(simplestElem);
+      }
+    }
+  },
   data() {
     return {
       style,
       buttons,
       arrayList: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       frame: 30,
+      elementId,
       options: {
         itemMargin: 10,
         horizontalDirection: 'left',
@@ -68,7 +79,7 @@ export default {
   },
   mounted() {
     window.addEventListener('resize', () => {
-      const simplestElem = document.querySelector('#simplest');
+      const simplestElem = document.querySelector(`#${elementId}`);
       this.options.containerWidth = Utils.width(simplestElem);
     }, false);
   },
@@ -107,7 +118,7 @@ export default {
 };
 </script>
 <style lang="less">
-.demo-con {
+#simplest {
   margin: 40px 0 20px 0;
 }
 </style>
