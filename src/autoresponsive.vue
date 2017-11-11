@@ -4,10 +4,10 @@
   </div>
 </template>
 <script>
-const Common = require('autoresponsive-core');
+const Core = require('autoresponsive-core');
 const {
   GridSort
-} = Common;
+} = Core;
 
 const pkg = require('../package');
 const AnimationManager = require('./animation');
