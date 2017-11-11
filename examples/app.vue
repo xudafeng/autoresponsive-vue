@@ -24,7 +24,7 @@
 <script>
 import AutoResponsive from '../src/autoresponsive.vue';
 
-import Utils from './utils';
+import Utils from '../homepage/utils';
 
 const pkg = require('../package');
 

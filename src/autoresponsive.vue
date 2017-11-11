@@ -4,9 +4,8 @@
   </div>
 </template>
 <script>
-const Common = require('autoresponsive-common');
+const Common = require('autoresponsive-core');
 const {
-  Util,
   GridSort
 } = Common;
 
@@ -100,7 +99,7 @@ export default {
           position: 'absolute'
         };
       }
-      Util.merge(s, style);
+      Object.assign(s, style);
     },
     updateChildren() {
       this.sortManager = new GridSort({
@@ -137,7 +136,7 @@ export default {
           }
         }
 
-        const options = Util.extend({}, this.$props, {
+        const options = Object.assign({}, this.$props, {
           position: calculatedPosition,
           size: {
             width: childWidth,
@@ -150,7 +149,7 @@ export default {
 
         this.mixItemInlineStyle(calculatedStyle);
 
-        Util.merge(node.style, calculatedStyle);
+        Object.assign(node.style, calculatedStyle);
 
         this.onItemDidLayout(node);
 

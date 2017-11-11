@@ -23,7 +23,7 @@
     "url": "https://github.com/xudafeng/autoresponsive-vue.git"
   },
   "devDependencies": {
-    "autoresponsive-common": "^1.0.1",
+    "autoresponsive-core": "^1.0.0",
     "babel": "~5.8.23",
     "babel-core": "^6.17.0",
     "babel-loader": "^7.1.0",

@@ -18,35 +18,6 @@ Utils.ajax = function(url, successCallback, failCallback) {
   request = null;
 };
 
-Utils.merge = function(r, s) {
-  this.each(s, function(v, k) {
-    r[k] = v;
-  });
-  return r;
-};
-
-Utils.each = function(obj, fn) {
-  for (const i in obj) {
-    if (obj.hasOwnProperty(i)) {
-      fn.call(this, obj[i], i);
-    }
-  }
-  return obj;
-};
-
-Utils.mixin = function(dest) {
-  var sources = Array.prototype.slice.call(arguments, 1);
-
-  for (var i = 0; i < sources.length; i++) {
-    var src = sources[i];
-    for (var key in src) {
-      if (!dest[key]) {
-        dest[key] = src[key];
-      }
-    }
-  }
-};
-
 Utils.getUrlParams = function(k) {
   var params = {};
   var url = location.href;
