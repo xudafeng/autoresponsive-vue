@@ -31,7 +31,7 @@ $ npm i autoresponsive-vue --save-dev
 ## Related Edition
 
 - [React Edition](//github.com/xudafeng/autoresponsive-react)
-- [ReactNative Edition](//github.com/xudafeng/autoresponsive_react_native_sample)
+- [ReactNative Edition](//github.com/xudafeng/autoresponsive-react-native)
 
 ## Contributing
 
