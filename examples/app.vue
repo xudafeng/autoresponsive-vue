@@ -94,17 +94,6 @@ export default {
   margin: auto;
   margin-top: 5px;
   padding-bottom: 60px;
-  _zoom: 1;
-}
-.albumPanel .aP-hd i,
-.albumPanel .aP-hd b,
-.albumPanel .album .a-mask i,
-.albumPanel .album .a-more,
-.albumPanel .aP-collapse i,
-.albumPanel .aP-expand i,
-.albumPanel .aP-expand.absolute {
-  background: url(http://img01.taobaocdn.com/tps/i1/T1yONIFapgXXaw9EUt-1000-274.png) no-repeat -9999px -9999px;
-  _background-image: url(http://img02.taobaocdn.com/tps/i2/T1XhBKFoReXXaw9EUt-1000-274.png);
 }
 .albumPanel .aP-hd {
   text-align: left;
@@ -187,7 +176,6 @@ export default {
 }
 .albumPanel .album .a-mask i {
   display: block;
-  visibility: hidden\9;
   opacity: 0;
   left: 50%;
   top: 40%;
@@ -268,12 +256,10 @@ export default {
   background-position: 0 0;
 }
 .albumPanel .album:hover .a-mask {
-  filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#00000000,endcolorstr=#FF000000,gradientType=0);
   background-color: transparent;
 }
 .albumPanel .album:hover .a-layer {
   background: none;
-  filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#00000000,endcolorstr=#00000000,gradientType=0);
 }
 .albumPanel .album:hover .a-layer .al-brand,
 .albumPanel .album:hover .a-layer .al-title {
