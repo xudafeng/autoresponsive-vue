@@ -45,6 +45,7 @@ header {
   overflow: hidden;
   cursor: default;
   border-bottom: 1px solid #ddd;
+  user-select: none;
   h1 em {
     color: #5fb783;
     font-style: normal;
