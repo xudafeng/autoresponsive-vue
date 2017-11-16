@@ -66,7 +66,7 @@ Vue.use(AutoResponsive);
 
 ## Examples
 
-- [示例1](./examples)
+- [常见用法示例](./examples)
 
 ## Related Edition
 

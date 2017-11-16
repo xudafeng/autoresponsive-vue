@@ -66,7 +66,7 @@ The completion of a waterfall layout becomes very easy.
 
 ## Examples
 
-- [Sample1](./examples)
+- [Common Usage Sample](./examples)
 
 ## Related Edition
 
