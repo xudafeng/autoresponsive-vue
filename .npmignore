@@ -2,6 +2,7 @@
 test/
 coverage/
 examples/images/
+.nyc_output
 *.html
 *.sw*
 *.un~

@@ -18,6 +18,7 @@ module.exports = {
   },
   externals: [
     {
+      vue: 'window.Vue'
     }
   ],
   module: {

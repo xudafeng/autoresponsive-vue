@@ -5,5 +5,6 @@ npm-debug.log
 Thumbs.db
 coverage/
 dist/
+.nyc_output
 *.sw*
 *.un~
