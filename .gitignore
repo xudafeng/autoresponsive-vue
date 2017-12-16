@@ -2,9 +2,11 @@
 node_modules
 npm-debug.log
 .idea/*
+.ready
 Thumbs.db
 coverage/
 dist/
-.nyc_output
+screenshots/
+reports/
 *.sw*
 *.un~

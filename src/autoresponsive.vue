@@ -4,13 +4,12 @@
   </div>
 </template>
 <script>
-const Core = require('autoresponsive-core');
-const {
+import {
   GridSort
-} = Core;
+} from 'autoresponsive-core';
 
-const pkg = require('../package');
-const AnimationManager = require('./animation');
+import pkg from '../package';
+import AnimationManager from './animation';
 
 export default {
   name: 'auto-responsive',

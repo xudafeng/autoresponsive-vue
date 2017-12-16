@@ -22,11 +22,9 @@
   </div>
 </template>
 <script>
-import AutoResponsive from '../src/autoresponsive.vue';
-
+import pkg from '../package';
 import Utils from '../homepage/utils';
-
-const pkg = require('../package');
+import AutoResponsive from '../src/autoresponsive.vue';
 
 export default {
   name: 'app',

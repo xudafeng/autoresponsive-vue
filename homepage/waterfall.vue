@@ -9,9 +9,9 @@
 </template>
 <script>
 import Vue from 'vue';
-import AutoResponsive from '../src/autoresponsive.vue';
 
 import Utils from './utils';
+import AutoResponsive from '../src/autoresponsive.vue';
 
 const getItemStyle = function() {
   return {
