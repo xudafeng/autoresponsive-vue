@@ -31,8 +31,7 @@ describe('test/homepage.test.js', () => {
 
   it('page render should be ok', () => {
     return driver
-      .get(BASE_URL)
-      .sleep(5000);
+      .get(BASE_URL);
   });
 
   it('panel should be ok', () => {
@@ -41,6 +40,7 @@ describe('test/homepage.test.js', () => {
     const elementRect = `document.querySelector('${elementGroup}').getClientRects()`;
     const height = `${elementRect}[0].y || ${elementRect}[0].top`;
     return driver
+      .sleep(500)
       .execute(`window.scrollTo(0, ${height})`)
       .elementsByCss(elementButton)
       .then(list => {

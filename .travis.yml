@@ -12,6 +12,6 @@ install:
 script:
   - npm i
   - npm run lint
-  - npm run test
+  - npm run ci
 after_script:
   - npm install coveralls@2 && cat ./coverage/lcov.info | coveralls
