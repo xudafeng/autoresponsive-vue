@@ -15,7 +15,7 @@ Auto responsive grid layout library for [Vue](//github.com/vuejs/vue).
 [travis-url]: https://travis-ci.org/xudafeng/autoresponsive-vue
 [coveralls-image]: https://img.shields.io/coveralls/xudafeng/autoresponsive-vue.svg?style=flat-square
 [coveralls-url]: https://coveralls.io/r/xudafeng/autoresponsive-vue?branch=master
-[node-image]: https://img.shields.io/badge/node.js-%3E=7-green.svg?style=flat-square
+[node-image]: https://img.shields.io/badge/node.js-%3E=8-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
 
 ## Examples

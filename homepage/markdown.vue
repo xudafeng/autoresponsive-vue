@@ -2,8 +2,8 @@
   <div v-bind:class="classObject" v-html="html"></div>
 </template>
 <script>
-const Markdown = require('marked');
-const Highlight = require('highlight.js');
+import Markdown from 'marked';
+import Highlight from 'highlight.js';
 
 Markdown.setOptions({
   highlight: function(code) {

@@ -1,4 +1,6 @@
-const ExecutionEnvironment = require('exenv');
+'use strict';
+
+import ExecutionEnvironment from 'exenv';
 
 function transitionEnd() {
   const transitionEndEventNames = {

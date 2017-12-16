@@ -21,7 +21,7 @@
   </header>
 </template>
 <script>
-const pkg = require('../package');
+import pkg from '../package';
 
 export default {
   name: 'customHeader',

@@ -1,8 +1,10 @@
 .travis.yml
+.ready
 test/
 coverage/
 examples/images/
-.nyc_output
+screenshots/
+reports/
 *.html
 *.sw*
 *.un~
