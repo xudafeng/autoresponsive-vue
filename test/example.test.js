@@ -30,6 +30,7 @@ describe('test/example.test.js', () => {
   it('page render should be ok', () => {
     return driver
       .get(`${BASE_URL}/examples`)
+      .sleep(5000)
       .setWindowSize(800, 600)
       .sleep(1000);
   });
