@@ -29,7 +29,7 @@ wd.addPromiseChainMethod('initWindow', function (options = {}) {
       .setWindowSize(options.width, options.height);
   };
 
-  if (!platform.isOSX) {
+  if (platform.isOSX) {
     return handle();
   } else {
     const readyFile = path.join(cwd, '.ready');
