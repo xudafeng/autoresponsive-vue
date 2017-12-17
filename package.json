@@ -17,8 +17,8 @@
     "lint": "eslint --fix --ext .js,.vue examples homepage src test",
     "build": "cross-env NODE_ENV=production webpack -p --progress --hide-modules",
     "serve": "npm run dev &",
-    "test": "macaca run -d ./test --verbose --reporter macaca-reporter",
-    "ci": "npm run serve && npm run test"
+    "test": "macaca run -d ./test --reporter macaca-reporter",
+    "ci": "npm run lint && npm run serve && npm run test"
   },
   "main": "dist/autoresponsive-vue.js",
   "repository": {
