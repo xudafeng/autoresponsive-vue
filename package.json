@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "dev:test": "cross-env NODE_ENV=test webpack-dev-server",
-    "prepublish": "npm run build",
+    "update": "npm run build",
     "lint": "eslint --fix --ext .js,.vue examples homepage src test",
     "compile": "babel src/ --out-dir dist/ -D",
     "build": "cross-env NODE_ENV=production webpack -p --progress --hide-modules && npm run compile",
