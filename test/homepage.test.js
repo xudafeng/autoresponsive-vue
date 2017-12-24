@@ -37,7 +37,7 @@ describe('test/homepage.test.js', () => {
 
     it('panel should be ok', () => {
       const elementGroup = `#simplest .btn-group`;
-      const elementButton = `${elementGroup} > button`;
+      const elementButton = `${elementGroup} button`;
       const elementRect = `document.querySelector('${elementGroup}').getClientRects()`;
       const height = `${elementRect}[0].y || ${elementRect}[0].top`;
       return driver
@@ -46,7 +46,7 @@ describe('test/homepage.test.js', () => {
         .elementsByCss(elementButton)
         .then(list => {
           const queue = list.map((item, key) => `${elementButton}:nth-child(${key + 1})`);
-          return Promise.reduce(queue, (i, selector) => {
+           return Promise.reduce([null].concat(queue), (i, selector) => {
             return driver
               .elementByCss(selector)
               .click()
@@ -67,7 +67,7 @@ describe('test/homepage.test.js', () => {
         .sleep(500)
         .elementsByCss(`${element} .item`)
         .then(list => {
-          const queue = list.map((item, key) => `${element} > .item:nth-child(${key + 1})`);
+          const queue = list.map((item, key) => `${element} > .item:nth-child(${key})`);
           return Promise.reduce(queue, (i, selector) => {
             return driver
               .elementByCss(selector)
@@ -80,9 +80,18 @@ describe('test/homepage.test.js', () => {
 
     it('i18n should be ok', () => {
       return driver
+        .get(`${BASE_URL}?locale=zh_CN#examples`)
+        .elementByCss('div.i18n-buttons > div > button:nth-child(2)')
+        .click()
+        .sleep(500)
         .elementByCss('div.i18n-buttons > div > button:nth-child(2)')
         .click()
         .sleep(500);
+    });
+
+    it('resize should be ok', () => {
+      return driver
+        .setWindowSize(800, 600);
     });
   });
 });

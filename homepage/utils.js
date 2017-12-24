@@ -1,6 +1,6 @@
 const Utils = {};
 
-Utils.ajax = function(url, successCallback, failCallback) {
+Utils.ajax = function(url, successCallback) {
   var request = new XMLHttpRequest();
   request.open('GET', url, true);
 
@@ -8,8 +8,6 @@ Utils.ajax = function(url, successCallback, failCallback) {
     if (this.readyState === 4) {
       if (this.status >= 200 && this.status < 400) {
         successCallback(this.responseText);
-      } else {
-        failCallback();
       }
     }
   };
