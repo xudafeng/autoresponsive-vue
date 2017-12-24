@@ -24,34 +24,36 @@ const {
 const cwd = process.cwd();
 
 wd.addPromiseChainMethod('initWindow', function (options = {}) {
-  const handle = () => {
-    return this
-      .init(Object.assign({
-        platformName: 'desktop',
-        browserName: 'electron',
-        deviceScaleFactor: 2
-      }, options))
-      .setWindowSize(options.width, options.height);
-  };
+  return this
+    .init(Object.assign({
+      platformName: 'desktop',
+      browserName: 'electron',
+      deviceScaleFactor: 2
+    }, options))
+    .setWindowSize(options.width, options.height);
+});
 
-  if (platform.isOSX) {
-    return handle();
-  } else {
-    const readyFile = path.join(cwd, '.ready');
-    return new Promise(resolve => {
-      const timeout = (port) => {
-        setTimeout(() => {
-          if (isExistedFile(readyFile)) {
-            resolve(handle());
-          } else {
-            console.log('waiting for you');
-            timeout(port);
-          }
-        }, 2000);
-      };
-      timeout(8080);
-    });
-  }
+wd.addPromiseChainMethod('getUrl', function (url) {
+  return new Promise(resolve => {
+    const handle = () => {
+      setTimeout(() => {
+        this
+          .get(url)
+          .sleep(1000)
+          .execute('return location.href')
+          .then(href => {
+            if (~href.indexOf(url)) {
+              setTimeout(() => {
+                resolve();
+              }, 3000);
+            } else {
+              handle();
+            }
+          });
+      }, 3000);
+    };
+    handle();
+  });
 });
 
 wd.addPromiseChainMethod('saveScreenshots', function (context) {

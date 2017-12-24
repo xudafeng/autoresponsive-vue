@@ -32,7 +32,7 @@ describe('test/homepage.test.js', () => {
 
     it('page render should be ok', () => {
       return driver
-        .get(BASE_URL);
+        .getUrl(BASE_URL);
     });
 
     it('panel should be ok', () => {
@@ -46,7 +46,7 @@ describe('test/homepage.test.js', () => {
         .elementsByCss(elementButton)
         .then(list => {
           const queue = list.map((item, key) => `${elementButton}:nth-child(${key + 1})`);
-           return Promise.reduce([null].concat(queue), (i, selector) => {
+          return Promise.reduce([null].concat(queue), (i, selector) => {
             return driver
               .elementByCss(selector)
               .click()

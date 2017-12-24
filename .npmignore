@@ -1,5 +1,4 @@
 .travis.yml
-.ready
 test/
 coverage/
 examples/images/

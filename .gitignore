@@ -2,7 +2,6 @@
 node_modules
 npm-debug.log
 .idea/*
-.ready
 Thumbs.db
 coverage/
 dist/
