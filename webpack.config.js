@@ -24,14 +24,12 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['env', 'stage-2']
-        }
+        exclude: /node_modules/
       },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.less$/,
