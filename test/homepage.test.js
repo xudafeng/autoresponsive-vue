@@ -1,5 +1,7 @@
 'use strict';
 
+import Promise from 'bluebird';
+
 import {
   webpackHelper
 } from 'macaca-wd';
@@ -8,8 +10,6 @@ const {
   driver,
   BASE_URL
 } = webpackHelper;
-
-import Promise from 'bluebird';
 
 describe('test/homepage.test.js', () => {
   describe('page func testing', () => {
