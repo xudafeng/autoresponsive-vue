@@ -20,7 +20,8 @@
     "build": "cross-env NODE_ENV=production webpack -p --progress --hide-modules && npm run compile",
     "serve": "npm run dev:test &",
     "test": "macaca run -d ./test --reporter macaca-reporter",
-    "ci": "npm run lint && npm run serve && npm run test"
+    "ci": "npm run lint && npm run serve && npm run test",
+    "contributor": "git-contributor"
   },
   "main": "dist/autoresponsive-vue.js",
   "repository": {
@@ -52,6 +53,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue-libs": "^1.2.1",
     "fork-me-on-github-vue": "^1.0.1",
+    "git-contributor": "^1.0.3",
     "highlight.js": "~8.3.0",
     "json-loader": "^0.5.7",
     "less": "^2.7.2",
