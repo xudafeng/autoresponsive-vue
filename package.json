@@ -1,7 +1,7 @@
 {
   "name": "autoresponsive-vue",
   "description": "Auto Responsive Layout Library For Vue",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "keywords": [
     "vue",
     "responsive",
@@ -23,7 +23,7 @@
     "ci": "npm run lint && npm run serve && npm run test",
     "contributor": "git-contributor"
   },
-  "main": "dist/autoresponsive-vue.js",
+  "main": "dist",
   "repository": {
     "type": "git",
     "url": "https://github.com/xudafeng/autoresponsive-vue.git"
