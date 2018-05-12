@@ -110,10 +110,12 @@ export default {
       let containerHeight = this.verticalDirection === 'bottom' || this.fixedContainerHeight ? this.containerHeight : 0;
 
       const container = this.$refs.container;
-      var children = container.children;
+      const children = container.children;
+      const memoryNodeList = this.$slots.default.filter(i => i.tag);
 
       for (var i = 0; i < children.length; i++) {
         const node = children[i];
+        const style = memoryNodeList[i].data.normalizedStyle;
 
         if (node.className &&
           this.itemClassName &&
@@ -121,8 +123,8 @@ export default {
           return;
         }
 
-        const childWidth = parseInt(node.offsetWidth, 10) + this.itemMargin;
-        const childHeight = parseInt(node.offsetHeight, 10) + this.itemMargin;
+        const childWidth = parseInt(style.width, 10) + this.itemMargin;
+        const childHeight = parseInt(style.height, 10) + this.itemMargin;
         const calculatedPosition = this.sortManager.getPosition(childWidth, childHeight);
 
         if (this.fixedContainerHeight) {
