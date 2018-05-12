@@ -110,11 +110,12 @@ export default {
       let containerHeight = this.verticalDirection === 'bottom' || this.fixedContainerHeight ? this.containerHeight : 0;
 
       const container = this.$refs.container;
-      var children = container.children;
+      const children = container.children;
+      const memoryNodeList = this.$slots.default.filter(i => i.tag);
 
       for (var i = 0; i < children.length; i++) {
         const node = children[i];
-        const style = this.$slots.default[i].data.normalizedStyle;
+        const style = memoryNodeList[i].data.normalizedStyle;
 
         if (node.className &&
           this.itemClassName &&
