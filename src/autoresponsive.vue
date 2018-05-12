@@ -114,7 +114,6 @@ export default {
 
       for (var i = 0; i < children.length; i++) {
         const node = children[i];
-        const style = this.$slots.default[i].data.normalizedStyle;
 
         if (node.className &&
           this.itemClassName &&
@@ -122,8 +121,8 @@ export default {
           return;
         }
 
-        const childWidth = parseInt(style.width, 10) + this.itemMargin;
-        const childHeight = parseInt(style.height, 10) + this.itemMargin;
+        const childWidth = parseInt(node.offsetWidth, 10) + this.itemMargin;
+        const childHeight = parseInt(node.offsetHeight, 10) + this.itemMargin;
         const calculatedPosition = this.sortManager.getPosition(childWidth, childHeight);
 
         if (this.fixedContainerHeight) {
