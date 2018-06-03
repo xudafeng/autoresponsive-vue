@@ -2,6 +2,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const pkg = require('./package');
 
@@ -27,7 +28,7 @@ module.exports = {
     },
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -40,15 +41,29 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        loader: 'style!css!less'
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'less-loader'
+          }
+        ]
       },
       {
         test: /\.json$/,
         loader: 'json-loader',
+        type: 'javascript/auto',
         exclude: /node_modules/
       }
     ]
-  }
+  },
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 };
 
 if (process.env.NODE_ENV === 'production') {
