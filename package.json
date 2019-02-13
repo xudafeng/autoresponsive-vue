@@ -54,6 +54,7 @@
     "fork-me-on-github-vue": "^1.0.1",
     "git-contributor": "^1.0.8",
     "highlight.js": "~8.3.0",
+    "husky": "^1.3.1",
     "json-loader": "^0.5.7",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
@@ -69,5 +70,10 @@
     "webpack-cli": "^3.0.1",
     "webpack-dev-server": "^3.1.4",
     "xutil": "^1.0.9"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }
